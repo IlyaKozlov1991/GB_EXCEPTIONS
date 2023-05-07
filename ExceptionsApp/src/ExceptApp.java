@@ -2,20 +2,20 @@ import java.util.Arrays;
 
 public class ExceptApp {
     public static void main(String[] args) {
-        System.out.println("Запуск программы\n...");
+        System.out.println("Запуск программы...\n");
         int[] arr1 = new int[] {10, 12, 10, 15, 15};
         int[] arr2 = new int[] {4, 5, 6, 7};
         
         int[] result1 = subtractArrays(arr1, arr2);
         System.out.println("Итоговый массив: " + Arrays.toString(result1));
-        System.out.println("Вычитание массивов завершено\n");
+        System.out.println("Вычитание массивов завершено.\n");
         int[] result2 = divideArrays(arr1, arr2);
         System.out.println("Итоговый массив: " + Arrays.toString(result2));
-        System.out.println("Деление массивов завершено\n");
+        System.out.println("Деление массивов завершено.\n\nЗавершение программы.");
     }
 
     private static int[] subtractArrays(int[] arr1, int[] arr2) {
-        System.out.println("Начало вычитания массивов");
+        System.out.println("Вычитание массивов...");
         int[] result  = new int[] {};
         if (arr1.length < arr2.length) {
             try {
@@ -65,7 +65,7 @@ public class ExceptApp {
     }
 
     private static int[] divideArrays(int[] arr1, int[] arr2) {
-        System.out.println("Начало деления массивов");
+        System.out.println("Деление массивов...");
         int[] result  = new int[] {};
         if (arr1.length < arr2.length) {
             try {
