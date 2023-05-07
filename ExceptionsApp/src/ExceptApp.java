@@ -3,25 +3,22 @@ import java.util.Arrays;
 public class ExceptApp {
     public static void main(String[] args) {
         System.out.println("Запуск программы\n...");
-        int[] arr1 = new int[] {10, 12, 10, 15, 15, 22};
+        int[] arr1 = new int[] {10, 12, 10, 15, 15};
         int[] arr2 = new int[] {4, 5, 6, 7};
         
         int[] result1 = subtractArrays(arr1, arr2);
-        System.out.println(Arrays.toString(result1));
-        System.out.println("Вычитание массивов завершено");
+        System.out.println("Итоговый массив: " + Arrays.toString(result1));
+        System.out.println("Вычитание массивов завершено\n");
         int[] result2 = divideArrays(arr1, arr2);
-        System.out.println(Arrays.toString(result2));
-        System.out.println("Деление массивов завершено");
+        System.out.println("Итоговый массив: " + Arrays.toString(result2));
+        System.out.println("Деление массивов завершено\n");
     }
 
     private static int[] subtractArrays(int[] arr1, int[] arr2) {
-        System.out.println("Запуск вычитания массивов");
+        System.out.println("Начало вычитания массивов");
         int[] result  = new int[] {};
         if (arr1.length < arr2.length) {
             try {
-                throw new ArraysSizeException();
-            } catch (ArraysSizeException e) {
-                System.out.println(e.getException());
                 int[] temp = new int[arr2.length];
                 for (int i = 0; i < temp.length; i++) {
                     try {
@@ -34,13 +31,13 @@ public class ExceptApp {
                 for (int i = 0; i < result.length; i++) {
                     result[i] = temp[i] - arr2[i];
                 }
+                throw new ArraysSizeException();
+            } catch (ArraysSizeException e) {
+                System.out.println(e.getException());
             }
         }
         if (arr1.length > arr2.length) {
             try {
-                throw new ArraysSizeException();
-            } catch (ArraysSizeException e) {
-                System.out.println(e.getException());
                 int[] temp = new int[arr1.length];
                 for (int i = 0; i < temp.length; i++) {
                     try {
@@ -53,6 +50,9 @@ public class ExceptApp {
                 for (int i = 0; i < result.length; i++) {
                     result[i] = arr1[i] - temp[i];
                 }
+                throw new ArraysSizeException();
+            } catch (ArraysSizeException e) {
+                System.out.println(e.getException());
             }
         }
         if (arr1.length == arr2.length) {
@@ -65,13 +65,10 @@ public class ExceptApp {
     }
 
     private static int[] divideArrays(int[] arr1, int[] arr2) {
-        System.out.println("Запуск деления массивов");
+        System.out.println("Начало деления массивов");
         int[] result  = new int[] {};
         if (arr1.length < arr2.length) {
             try {
-                throw new ArraysSizeException();
-            } catch (ArraysSizeException e) {
-                System.out.println(e.getException());
                 int[] temp = new int[arr2.length];
                 for (int i = 0; i < temp.length; i++) {
                     try {
@@ -93,13 +90,13 @@ public class ExceptApp {
                         }
                     }
                 }
+                throw new ArraysSizeException();
+            } catch (ArraysSizeException e) {
+                System.out.println("ПРЕДУПРЕЖДЕНИЕ: для корректного выполнения программы длины массивов были приравнены с добавлением 0 к недостающим значениям.");
             }
         }
         if (arr1.length > arr2.length) {
             try {
-                throw new ArraysSizeException();
-            } catch (ArraysSizeException e) {
-                System.out.println(e.getException());
                 int[] temp = new int[arr1.length];
                 for (int i = 0; i < temp.length; i++) {
                     try {
@@ -121,6 +118,9 @@ public class ExceptApp {
                         }
                     }
                 }
+                throw new ArraysSizeException();
+            } catch (ArraysSizeException e) {
+                System.out.println("ПРЕДУПРЕЖДЕНИЕ: для корректного выполнения программы длины массивов были приравнены с добавлением 0 к недостающим значениям.");
             }
         }
         if (arr1.length == arr2.length) {
