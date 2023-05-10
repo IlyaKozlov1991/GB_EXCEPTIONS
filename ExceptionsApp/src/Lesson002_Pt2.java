@@ -3,6 +3,7 @@ import java.util.NoSuchElementException;
 public class Lesson002_Pt2 {
     public static void main(String[] args) throws Exception{
         
+        // Exercise2();
         try {
             int a = 90;
             int b = 3;
